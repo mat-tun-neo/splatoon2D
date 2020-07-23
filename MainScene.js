@@ -25,11 +25,11 @@ phina.define("MainScene", {
     // Xボタンオブジェクト
     this.xbutton();
     // 画面タップ
-    this.onpointstart = function(e) {
-      console.log(this.xbutton.x + "/" + this.xbutton.y);
-      // プレイヤー移動
-      this.player.move(e);
-    };
+    // this.onpointstart = function(e) {
+    //   console.log(this.xbutton.x + "/" + this.xbutton.y);
+    //   // プレイヤー移動
+    //   this.player.move(e);
+    // };
   },
   // Xボタン描画
   xbutton: function() {
