@@ -51,7 +51,7 @@ phina.define('Player', {
     this.charSize = 1.5 + 3 * this.sprite.y / SCREEN_HEIGHT;
     var xDiff = this.sprite.x - p.x;
     var yDiff = this.sprite.y - p.y;
-    if (app.frame % 3 == 0 && Math.abs(xDiff) > 0.2 && Math.abs(yDiff) > 0.2) {
+    if (app.frame % 2 == 0 && Math.abs(xDiff) > 0.2 && Math.abs(yDiff) > 0.2) {
       console.log(this.sprite.x + "/" + this.sprite.y + '/経過フレーム数：' + app.frame);
       var ink = Sprite('ink', 36, 46).addChildTo(this.playergroup);
       ink.setScale(this.charSize, this.charSize);
