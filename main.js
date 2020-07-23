@@ -4,6 +4,8 @@ phina.globalize();
 var SCREEN_WIDTH    = 640;
 var SCREEN_HEIGHT   = 960;
 var SCREEN_LIMIT = 150
+var XBUTTON_SIZE = 80
+var HREF = "https://ayu-study.com/js-programming001-02-src";
 
 // アセット
 var ASSETS = {
@@ -13,6 +15,7 @@ var ASSETS = {
     'walk': './images/walk3646.png',
     'ink': './images/ink3646.png',
     'shoot': './images/shoot5046.png',
+    'xbutton': './images/xbutton1.png',
   },
   // スプライトシート
   spritesheet: {
@@ -26,6 +29,7 @@ var ASSETS = {
  * メイン処理
  */
 phina.main(function() {
+  console.log("main");
   // アプリケーションを生成
   var app = GameApp({
     width: SCREEN_WIDTH,
@@ -44,11 +48,12 @@ phina.define("SceneSequence", {
 
   // 初期化
   init: function() {
+    console.log("SceneSequenceクラスinit");
     this.superInit({
       scenes: [
         {
-          label: "Loading", // ラベル。参照用
-          className: "LoadingScene", // シーンAのクラス名
+          label: "Loading",
+          className: "LoadingScene",
           nextLabel:'Main'
         },
         {
@@ -64,10 +69,12 @@ phina.define("LoadingScene", {
   superClass: "phina.game.LoadingScene",
 
   init: function(options) {
+    console.log("LoadingSceneクラスinit");
 
     this.superInit({
       // アセット読み込み
       assets: ASSETS,
+      exitType: "auto",
     });
 
     var self = this;
